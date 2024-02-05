@@ -1,24 +1,31 @@
 GET http://localhost:3003/api/currency/
 
-###
+GET http://localhost:3003/api/country
 
-GET http://localhost:3003/api/currency/1
+GET http://localhost:3003/api/currency-countryName
 
 ###
+Method: POST
+Endpoint: http://localhost:3003/api/country
+Body:
+{
+  "name": "Canada"
+}
+
 
 POST http://localhost:3003/api/currency/
 Content-Type: application/json
-
+Body:
 {
-  "currencyCode": "EUR",
-  "country": "Germany",
-  "conversionRate": 0.85
+  "currencyCode": "USD",
+  "conversionRate": 1.0,
+  "countryId": 1  
 }
 
 ###
-
 PUT http://localhost:3003/api/currency/1/0.8
 
 ###
-
 DELETE http://localhost:3003/api/currency/2
+
+DELETE http://localhost:3003/api/country/1
