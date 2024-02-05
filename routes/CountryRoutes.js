@@ -24,11 +24,10 @@ router.get('/', async (request, response) => {
  * @responds by returning the newly created resource
  */
 router.post('/', async (request, response) => {
-  const newCountry = request.body;
-
   try {
-    const createdCountry = await Country.create(newCountry);
-    response.json(createdCountry);
+    const { name } = request.body;
+    const newCountry = await Country.create({ name });
+    response.status(201).json(newCountry);
   } catch (error) {
     console.error(error);
     response.status(500).json({ error: 'Internal Server Error' });

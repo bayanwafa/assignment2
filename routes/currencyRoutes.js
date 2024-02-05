@@ -51,11 +51,10 @@ router.get('/:id', async (request, response) => {
  */
 // POST a new currency
 router.post('/', async (request, response) => {
-  const newCurrency = request.body;
-
   try {
-    const createdCurrency = await Currency.create(newCurrency);
-    response.json(createdCurrency);
+    const { currencyCode, conversionRate, countryId } = request.body;
+    const newCurrency = await Currency.create({ currencyCode, conversionRate, countryId });
+    response.status(201).json(newCurrency);
   } catch (error) {
     console.error(error);
     response.status(500).json({ error: 'Internal Server Error' });
