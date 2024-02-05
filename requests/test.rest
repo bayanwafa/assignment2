@@ -8,19 +8,16 @@ GET http://localhost:3003/api/currency-countryName
 Method: POST
 Endpoint: http://localhost:3003/api/country
 Body:
-{
-  "name": "Canada"
-}
+{"name": "USA"}
 
 
-POST http://localhost:3003/api/currency/
+POST http://localhost:3003/api/currency
 Content-Type: application/json
 Body:
-{
-  "currencyCode": "USD",
-  "conversionRate": 1.0,
-  "countryId": 1  
-}
+{"currencyCode": "USD", 
+"conversionRate": 1.0, 
+"countryId": 1}
+
 
 ###
 PUT http://localhost:3003/api/currency/1/0.8
