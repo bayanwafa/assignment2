@@ -1,22 +1,37 @@
-GET http://localhost:3003/api/currency/
+GET http://localhost:3003/api/currency
 
 GET http://localhost:3003/api/country
 
 GET http://localhost:3003/api/currency-countryName
 
 ###
-Method: POST
-Endpoint: http://localhost:3003/api/country
-Body:
-{"name": "USA"}
+
+POST http://localhost:3003/api/country
+Content-Type: application/json
+
+{
+  "name": "United States"
+}
+
+{
+  "name": "Canada"
+}
 
 
 POST http://localhost:3003/api/currency
 Content-Type: application/json
-Body:
-{"currencyCode": "USD", 
-"conversionRate": 1.0, 
-"countryId": 1}
+
+{
+  "currencyCode": "USD", 
+  "conversionRate": 1.0, 
+  "countryId": 1
+}
+
+{
+  "currencyCode": "CAD",
+  "conversionRate": 1.0,
+  "countryId": 2
+}
 
 
 ###

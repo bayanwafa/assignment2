@@ -37,6 +37,6 @@ Currency.init({
 
 // Define associations
 Currency.belongsTo(Country, { foreignKey: 'countryId' });
-Country.hasOne(Currency, { foreignKey: 'countryId' });
+Country.hasMany(Currency, { foreignKey: 'countryId' });
 
 module.exports = Currency;
